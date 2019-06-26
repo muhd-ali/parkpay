@@ -24,13 +24,13 @@ class Main extends React.Component<MainProps, MainState> {
     }
 
     makeRequest() {
-        this.setState({isInputEnabled : false})
+        this.setState({ isInputEnabled: false })
         serverCommunicator.putRequestForTransfer(this.state.amount)
-        .then(() => {
-            window.location.reload()
-        })
+            .then(() => {
+                window.location.reload()
+            })
     }
-    
+
     render() {
         let { classes } = this.props;
         return (
@@ -43,7 +43,7 @@ class Main extends React.Component<MainProps, MainState> {
                                 variant='h4'
                                 component='h2'
                             >
-                                Make quick credit transfer to your bank.
+                                Quick pay for the parking.
                             </Typography>
                         </Grid>
                     </Grid>
@@ -51,12 +51,25 @@ class Main extends React.Component<MainProps, MainState> {
                     <Grid container spacing={24} justify='space-around'>
                         <Grid item lg={11}>
                             <TextField
-                                id="standard-number"
-                                label="Enter Amount in Dollars"
+                                id="from-time"
+                                label="To"
                                 // className={classes.textField}
                                 value={this.state.amount}
-                                onChange={(e) => {this.setState({amount : parseFloat(e.target.value)})}}
-                                type='number'
+                                onChange={(e) => { this.setState({ amount: parseFloat(e.target.value) }) }}
+                                type='time'
+                                margin="normal"
+                                variant="outlined"
+                                disabled={!this.state.isInputEnabled}
+                            />
+                        </Grid>
+                        <Grid item lg={11}>
+                            <TextField
+                                id="to-time"
+                                label="From"
+                                // className={classes.textField}
+                                value={this.state.amount}
+                                onChange={(e) => { this.setState({ amount: parseFloat(e.target.value) }) }}
+                                type='time'
                                 margin="normal"
                                 variant="outlined"
                                 disabled={!this.state.isInputEnabled}
@@ -65,9 +78,9 @@ class Main extends React.Component<MainProps, MainState> {
                     </Grid>
 
                     <Grid container spacing={24} justify='flex-end'>
-                    <Grid item lg={1}>
+                        <Grid item lg={1}>
                             <Button variant="contained" color="primary" onClick={() => this.makeRequest()} disabled={!this.state.isInputEnabled}>
-                                Transfer
+                                Pay
                             </Button>
                         </Grid>
                         <Grid item lg={1}>

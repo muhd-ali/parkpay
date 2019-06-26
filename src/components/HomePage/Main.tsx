@@ -1,5 +1,5 @@
 import React from 'react';
-import { withStyles, WithStyles, Theme, Paper, Grid, Card, CardActionArea, CardContent, Typography, Divider, CardHeader } from '@material-ui/core';
+import { withStyles, WithStyles, Theme, Paper, Grid, Typography } from '@material-ui/core';
 import { serverCommunicator } from 'models/ServerCommunicator';
 
 const styles = (theme: Theme) => ({
@@ -61,64 +61,12 @@ class Main extends React.Component<MainProps, MainState> {
                     <Grid container spacing={24} justify='space-around'>
                         <Grid item lg={12}>
                             <Typography
-                                style={{ padding: '30px' }}
+                                style={{ padding: '2rem' }}
                                 variant='h4'
                                 component='h2'
                             >
-                                Welcome to BlockRedit.
+                                Welcome to ParkPay.
                             </Typography>
-                        </Grid>
-                    </Grid>
-                    <Grid container spacing={24} justify='space-around'>
-                        <Grid item lg={11}>
-                            <Card>
-                                <CardHeader title='Exchange Rate' />
-                                <Divider />
-                                <CardActionArea>
-                                    <CardContent>
-                                        <Typography variant='subtitle1' color='textSecondary'>
-                                            Price
-                                        </Typography>
-                                        <Typography variant='button'>
-                                            ${this.state.valueof1Coin}
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        </Grid>
-                    </Grid>
-                    <Grid container spacing={24} justify='space-around'>
-                        <Grid item lg={5}>
-                            <Card>
-                                <CardHeader title='Bank Account' />
-                                <Divider />
-                                <CardActionArea>
-                                    <CardContent>
-                                        <Typography variant='subtitle1' color='textSecondary'>
-                                            Current Balance
-                                        </Typography>
-                                        <Typography variant='button'>
-                                            ${this.state.bankBalance}
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
-                        </Grid>
-                        <Grid item lg={5}>
-                            <Card>
-                                <CardHeader title='Crypto Account' />
-                                <Divider />
-                                <CardActionArea>
-                                    <CardContent>
-                                        <Typography variant='subtitle1' color='textSecondary'>
-                                            Current Balance
-                                        </Typography>
-                                        <Typography variant='button'>
-                                            {this.state.cryptoBalance}
-                                        </Typography>
-                                    </CardContent>
-                                </CardActionArea>
-                            </Card>
                         </Grid>
                     </Grid>
                 </Paper>

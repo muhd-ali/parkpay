@@ -4,7 +4,8 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import ImportExport from '@material-ui/icons/ImportExport';
+import Payment from '@material-ui/icons/Payment';
+import CardMembership from '@material-ui/icons/CardMembership';
 import Home from '@material-ui/icons/Home';
 import { WithStyles, withStyles, Typography, Card, CardContent, CardActionArea, Link } from '@material-ui/core';
 import { Link as RouterLink } from 'react-router-dom';
@@ -19,7 +20,6 @@ export interface State {
 
 class DrawerInnerView extends React.Component<DrawerInnerViewProps, State> {
   render() {
-    const { classes } = this.props;
     return (
       <div>
         <Card>
@@ -48,12 +48,20 @@ class DrawerInnerView extends React.Component<DrawerInnerViewProps, State> {
               <ListItemText primary={'Homepage'} />
             </ListItem>
           </RouterLink>
-          <RouterLink to="/quickcredit">
-            <ListItem button key={'Quick Cash'}>
+          <RouterLink to="/quickpark">
+            <ListItem button key={'Quick Park'}>
               <ListItemIcon>
-                <ImportExport />
+                <Payment />
               </ListItemIcon>
-              <ListItemText primary={'Quick Cash'} />
+              <ListItemText primary={'Quick Park'} />
+            </ListItem>
+          </RouterLink>
+          <RouterLink to="/passes">
+            <ListItem button key={'Saving Pass'}>
+              <ListItemIcon>
+                <CardMembership />
+              </ListItemIcon>
+              <ListItemText primary={'Saving Pass'} />
             </ListItem>
           </RouterLink>
         </List>
