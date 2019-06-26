@@ -32,7 +32,7 @@ class DrawerInnerView extends React.Component<DrawerInnerViewProps, State> {
                   component="h2"
                   color='textSecondary'
                 >
-                  BlockRedit
+                  Park Pay
                 </Typography>
               </Link>
             </CardContent>
